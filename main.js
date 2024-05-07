@@ -1,4 +1,9 @@
 const myLibrary = [];
+const bookshelf = document.querySelector('#book-card-container');
+const dialog = document.querySelector('dialog');
+const addBookButton = document.querySelector('#add-book');
+const dialogCloseButton = document.querySelector('.dialog-close');
+const form = dialog.querySelector('form');
 
 function Book(title, author, pages, genre, readStatus) {
     this.title = title;
@@ -14,16 +19,16 @@ function addBookToLibrary(title, author, pages, genre) {
     displayBooks();
 }
 
-const dialog = document.querySelector('dialog');
-const addBookButton = document.querySelector('#add-book');
-const dialogCloseButton = document.querySelector('.dialog-close');
-const form = dialog.querySelector('form');
+// Default books
+addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 310, 'Fantasy');
+addBookToLibrary('The Great Gatsby', 'F. Scott Fitzgerald', 180, 'Classic');
+addBookToLibrary('The Catcher in the Rye', 'J.D. Salinger', 214, 'Classic');
 
 addBookButton.addEventListener('click', () => {
     dialog.showModal();
 });
 
-dialogCloseButton.addEventListener('click', (event) => {
+form.addEventListener('submit', (event) => {
     event.preventDefault();
     const title = form.querySelector('#title').value;
     const author = form.querySelector('#author').value;
@@ -34,7 +39,12 @@ dialogCloseButton.addEventListener('click', (event) => {
     dialog.close();
 });
 
-const bookshelf = document.querySelector('#book-card-container');
+const xButton = document.querySelector('#x-button');
+
+xButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    dialog.close();
+});
 
 function displayBooks() {
     bookshelf.innerHTML = ''; // Clear the bookshelf before displaying the books
@@ -46,7 +56,7 @@ function displayBooks() {
             <h2 id="bookTitle">${book.title}</h2>
             <p id="bookAuthor">${book.author}</p>
             <p id="bookGenre">${book.genre}</p>
-            <p id="bookPages">${book.pages} pages</p>
+            <p id="bookPages"><b>${book.pages}</b> pages</p>
             <button id="readButton">Read</button>
         `;
 
@@ -54,4 +64,4 @@ function displayBooks() {
     })
 };
 
-displayBooks();
+displayBooks(); // Display the books when the page loads

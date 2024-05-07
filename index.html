@@ -21,27 +21,6 @@
             <main class="main-wrapper">
                 <section class="books">
                     <ul id="book-card-container">
-                        <li class="book-card" id="book-id-1">
-                            <h2 id="bookTitle">Book Title</h2>
-                            <p id="bookAuthor">Author</p>
-                            <p id="bookGenre">Genre</p>
-                            <p id="bookYear">Year</p>
-                            <button id="readButton">Read</button>
-                        </li>
-                        <li class="book-card" id="book-id-2">
-                            <h2 id="bookTitle">Book Title</h2>
-                            <p id="bookAuthor">Author</p>
-                            <p id="bookGenre">Genre</p>
-                            <p id="bookYear">Year</p>
-                            <button id="readButton">Read</button>
-                        </li>
-                        <li class="book-card" id="book-id-3">
-                            <h2 id="bookTitle">Book Title</h2>
-                            <p id="bookAuthor">Author</p>
-                            <p id="bookGenre">Genre</p>
-                            <p id="bookYear">Year</p>
-                            <button id="readButton">Read</button>
-                        </li>
                     </ul>
                 </section>
                 <div class="bottom-buttons">
@@ -50,5 +29,20 @@
             </main>
         </div>
     </div>
+
+    <dialog>
+        <form id="add-book-form" method="dialog">
+            <button value="cancel" formmethod="dialog" id="x-button">X</button>
+            <label for="title">Title: </label>
+            <input type="text" id="title" name="title" required>
+            <label for="author">Author: </label>
+            <input type="text" id="author" name="author" required>
+            <label for="genre">Genre: </label>
+            <input type="text" id="genre" name="genre" required>
+            <label for="pages">Pages: </label>
+            <input type="text" id="pages" name="pages" required>
+            <button type="submit" class="dialog-close" value="default">Add</button>
+        </form>
+    </dialog>
 </body>
 </html>

@@ -141,3 +141,21 @@ input:focus {
 #readButton:hover {
     background-color: #434343;
 }
+
+::backdrop {
+    background-color: black;
+    opacity: 0.5;
+}
+
+dialog {
+    width: 30vw;
+    background-color: #f1f1f1;
+    border:#1b1b1b solid 1px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #1b1b1b;
+
+}
+
+/* dialog #x-button {
+    
+} */

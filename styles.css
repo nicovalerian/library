@@ -45,7 +45,7 @@
 
 #search-input {
     border: 0;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.8rem;
     background-color: #f1f1f1;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
@@ -81,6 +81,8 @@ input:focus {
 }
 
 #add-book {
+    font-size: 1.5rem;
+    font-weight: 500;
     width: 100%;
     padding: 1rem;
     cursor: pointer;
@@ -93,19 +95,15 @@ input:focus {
     background-color: #e1e1e1;
 }
 
-
-.bottom-buttons {
-    display: flex;
-    flex-direction: row;
-}
-
 #book-card-container {
     margin-top: 2rem;
-    padding: 0 2rem;
+    padding: 0.5rem 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     gap: 3rem;
     list-style: none;
+    overflow-y: auto;
+    max-height: 75vh;
 }
 
 .book-card {
@@ -113,4 +111,33 @@ input:focus {
     background-color: #e1e1e1;
     border-radius: 8px;
     box-shadow: 0 0 5px #1b1b1b;
+    overflow: hidden;
+}
+
+.book-card h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.book-card p {
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+#readButton {
+    font-weight: bold;
+    width: 6rem;
+    padding: 0.5rem 1rem;
+    border: 0;
+    background-color: #1b1b1b;
+    border-radius: 6px;
+    color: #f1f1f1;
+    cursor: pointer;
+}
+
+#readButton:hover {
+    background-color: #434343;
 }

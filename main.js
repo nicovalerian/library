@@ -58,10 +58,20 @@ function displayBooks() {
             <p id="bookGenre">${book.genre}</p>
             <p id="bookPages"><b>${book.pages}</b> pages</p>
             <button id="readButton">Read</button>
+            <button id="deleteButton">Delete</button>
         `;
 
         bookshelf.appendChild(bookCard);
     })
 };
+
+bookshelf.addEventListener('click', (event) => { // Delete book when delete button is clicked
+    if (event.target.id === 'deleteButton') {
+        const bookCard = event.target.closest('.book-card');
+        const bookId = bookCard.id.split('-')[2];
+        myLibrary.splice(bookId, 1);
+        displayBooks();
+    }
+});
 
 displayBooks(); // Display the books when the page loads

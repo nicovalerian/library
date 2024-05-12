@@ -142,6 +142,21 @@ input:focus {
     background-color: #434343;
 }
 
+#deleteButton {
+    font-weight: bold;
+    width: 6rem;
+    padding: 0.5rem 1rem;
+    border: 0;
+    background-color: red;
+    border-radius: 6px;
+    color: #f1f1f1;
+    cursor: pointer;
+}
+
+#deleteButton:hover {
+    background-color: #d20101;
+}
+
 ::backdrop {
     background-color: black;
     opacity: 0.5;

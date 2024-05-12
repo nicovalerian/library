@@ -13,8 +13,8 @@ function Book(title, author, pages, genre, readStatus) {
     this.readStatus = readStatus;
 }
 
-function addBookToLibrary(title, author, pages, genre) {
-    const newBook = new Book(title, author, pages, genre, false);
+function addBookToLibrary(title, author, pages, genre, readStatus) {
+    const newBook = new Book(title, author, pages, genre, readStatus);
     myLibrary.push(newBook);
     displayBooks();
 }
@@ -34,7 +34,9 @@ form.addEventListener('submit', (event) => {
     const author = form.querySelector('#author').value;
     const pages = form.querySelector('#pages').value;
     const genre = form.querySelector('#genre').value;
-    addBookToLibrary(title, author, pages, genre);
+    const readStatus = form.querySelector('#readStatus').value === 'read' ? true : false;
+    console.log(form.querySelector('#readStatus'))
+    addBookToLibrary(title, author, pages, genre, readStatus);
     form.reset();
     dialog.close();
 });
@@ -57,6 +59,7 @@ function displayBooks() {
             <p id="bookAuthor">${book.author}</p>
             <p id="bookGenre">${book.genre}</p>
             <p id="bookPages"><b>${book.pages}</b> pages</p>
+            <p id="bookReadStatus">${book.readStatus ? 'Read' : 'Not read'}</p>
             <button id="readButton">Read</button>
             <button id="deleteButton">Delete</button>
         `;
